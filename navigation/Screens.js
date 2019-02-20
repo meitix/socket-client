@@ -14,6 +14,7 @@ import SettingsScreen from '../screens/Settings';
 import Menu from './Menu';
 import Header from '../components/Header';
 import { Drawer } from '../components/';
+import { ConfigScreen } from '../screens/config.screen';
 
 const transitionConfig = (transitionProps, prevTransitionProps) => ({
   transitionSpec: {
@@ -118,6 +119,12 @@ const HomeStack = createStackNavigator({
 
 const AppStack = createDrawerNavigator(
   {
+    // Config: {
+    //   screen: ConfigScreen,
+    //   navigationOptions: {
+    //     drawerLabel: () => {},
+    //   },
+    // },
     Onboarding: {
       screen: OnboardingScreen,
       navigationOptions: {
