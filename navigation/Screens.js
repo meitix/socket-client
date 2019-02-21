@@ -119,12 +119,12 @@ const HomeStack = createStackNavigator({
 
 const AppStack = createDrawerNavigator(
   {
-    // Config: {
-    //   screen: ConfigScreen,
-    //   navigationOptions: {
-    //     drawerLabel: () => {},
-    //   },
-    // },
+    Config: {
+      screen: ConfigScreen,
+      navigationOptions: {
+        drawerLabel: () => {},
+      },
+    },
     Onboarding: {
       screen: OnboardingScreen,
       navigationOptions: {
