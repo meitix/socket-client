@@ -14,7 +14,7 @@ import SettingsScreen from '../screens/Settings';
 import Menu from './Menu';
 import Header from '../components/Header';
 import { Drawer } from '../components/';
-import { ConfigScreen } from '../screens/config.screen';
+import { ConfigScreen } from '../screens/Config.screen';
 
 const transitionConfig = (transitionProps, prevTransitionProps) => ({
   transitionSpec: {
