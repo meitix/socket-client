@@ -121,9 +121,6 @@ const AppStack = createDrawerNavigator(
   {
     Config: {
       screen: ConfigScreen,
-      navigationOptions: {
-        drawerLabel: () => {},
-      },
     },
     Onboarding: {
       screen: OnboardingScreen,
