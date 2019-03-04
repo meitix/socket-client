@@ -1,5 +1,4 @@
 import io from "socket.io-client";
-
 export class SocketClient {
   connectionEventEmitter;
 
@@ -19,7 +18,7 @@ export class SocketClient {
   connect() {
     // set connect event function.
     if (this.onConnect && (typeof this.onConnect).toLowerCase() === "function")
-      this.socket.on("connect", this.onConnect);
+      this.addListener("connect", this.onConnect);
 
     this.socket.connect();
   }
@@ -30,7 +29,7 @@ export class SocketClient {
       this.onDisconnect &&
       (typeof this.onDisconnect).toLowerCase() === "function"
     )
-      this.socket.on("disconnect", this.onDisconnect);
+      this.addListener("disconnect", this.onDisconnect);
 
     this.socket.disconnect();
   }
@@ -40,7 +39,8 @@ export class SocketClient {
   }
 
   emit(data) {
-    this.socket.emit(this.event, data);
+    console.log(this.config.event, data);
+    this.socket.emit(this.config.event, data);
   }
 
   addListener(event, cb) {

@@ -38,12 +38,20 @@ export class ConfigScreen extends Component {
   }
 
   // emit
-  emit() {}
+  emit() {
+    console.log(this.state.isConnected)
+    if(!this.state.isConnected) {
+      alert('please connect to server');
+      return;
+    }
+
+    this.socketClient.emit(this.state.formData.data);
+  }
 
   // connect
   connect() {
     this.socketClient = socketClient = this.getSocketClient();
-    
+
     // set connect event function.
     this.socketClient.onConnect = (() => {
       alert("connected");
@@ -120,7 +128,7 @@ export class ConfigScreen extends Component {
               }}
             />
             <Block row>
-              <Button style={styles.btn} onPress={this.emit.bind(this)}>
+              <Button disabled={!this.state.isConnected} style={styles.btn} onPress={this.emit.bind(this)}>
                 Emit
               </Button>
               {this.state.isConnected ? (
